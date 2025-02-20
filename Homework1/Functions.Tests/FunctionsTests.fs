@@ -4,6 +4,7 @@ open NUnit.Framework
 open Homework1
 open FsUnit
 
+/// Test of the function calculating the factorial of n.
 [<Test>]
 let ``Factorial Tests`` () =
     Functions.factorial 0 |> should equal (Some 1)
