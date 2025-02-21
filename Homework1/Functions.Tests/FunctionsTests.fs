@@ -7,7 +7,7 @@ open FsCheck
 
 let revTest (list:list<int>) = Functions.listReverse list = List.rev list
 
-/// Test of the function calculating the factorial of n.
+/// Test of the list reversal function.
 [<Test>]
 let ``List reverse Tests`` () =
     Check.QuickThrowOnFailure revTest
