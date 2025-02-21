@@ -2,7 +2,7 @@
 
 /// Module implementing functions for homework.
 module Functions =
-    /// 
+    /// The function implements the search for a number in the list.
     let rec numberSearch list n =
         let rec search list n acc =
             if List.isEmpty list then
