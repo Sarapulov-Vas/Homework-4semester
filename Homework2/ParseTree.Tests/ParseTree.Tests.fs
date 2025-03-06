@@ -1,23 +1,23 @@
 ﻿module ParseTree.Tests
 
 open NUnit.Framework
-open Homework2
+open Homework2.ParseTree
 open FsUnit
 
 [<Test>]
-let ```parse tree calculation test`` () =
+let ``parse tree calculation test`` () =
     let tree = 
-        ParseTree.Operator((+), ParseTree.Operand 1, ParseTree.Operand 1)
-    ParseTree.calculate tree |> should equal 2
+        Operator((+), Operand 1, Operand 1)
+    calculate tree |> should equal 2
 
     let tree = 
-        ParseTree.Operator((+), 
-        ParseTree.Operator((/), ParseTree.Operand 10, ParseTree.Operand 2),
-        ParseTree.Operator((*), 
-        ParseTree.Operator((-), ParseTree.Operand 7, ParseTree.Operand 2),
-        ParseTree.Operand 2))
-    ParseTree.calculate tree |> should equal 15
+        Operator((+), 
+        Operator((/), Operand 10, Operand 2),
+        Operator((*), 
+        Operator((-), Operand 7, Operand 2),
+        Operand 2))
+    calculate tree |> should equal 15
 
-let ```parse tree calculation operand test`` () =
-    let tree =  ParseTree.Operand 1
-    ParseTree.calculate tree |> should equal 1
+let ``parse tree calculation operand test`` () =
+    let tree =  Operand 1
+    calculate tree |> should equal 1
