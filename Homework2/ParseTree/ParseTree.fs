@@ -5,9 +5,9 @@ module ParseTree =
         | Operand of 'a
         | Operator of ('a -> 'a -> 'a) * Tree<'a> * Tree<'a>
 
-    /// Map for binary tree
+    /// Function that calculates the value of an arithmetic expression using the parse tree.
     let rec calculate parseTree =
         match parseTree with
         | Operand(value) -> value
         | Operator(operator, left, right) ->
-            operator calculate left calculate right
+            operator (calculate left) (calculate right)
