@@ -1,14 +1,13 @@
-﻿namespace TreeMap
+﻿namespace Homework2
 
 module Tree =
     type Tree<'a> =
         | Node of 'a * Tree<'a> * Tree<'a>
-        | Empty
+        | Leaf
 
     /// Map for binary tree
     let rec map f binTree =
         match binTree with
-        | Empty -> Empty
+        | Leaf -> Leaf
         | Node(value, left, right) ->
             Node (f value, map f left, map f right)
-

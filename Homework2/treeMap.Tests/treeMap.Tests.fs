@@ -1,20 +1,20 @@
 ﻿module treeMap.Tests
 
 open NUnit.Framework
-open TreeMap
+open Homework2.Tree
 open FsUnit
 
 [<Test>]
 let ``Tree map test`` () =
     let tree = 
-        Tree.Node(1, Tree.Node(2, Tree.Empty, Tree.Empty), Tree.Node(3, Tree.Empty, Tree.Empty))
+        Node(1, Node(2, Leaf, Leaf), Node(3, Leaf, Leaf))
     let expectedTree = 
-        Tree.Node(1, Tree.Node(4, Tree.Empty, Tree.Empty), Tree.Node(9, Tree.Empty, Tree.Empty))
-    let newTree = Tree.map (fun(x) -> x * x) tree
+        Node(1, Node(4, Leaf, Leaf), Node(9, Leaf, Leaf))
+    let newTree = map (fun(x) -> x * x) tree
     newTree |> should equal expectedTree
 
 let ``Tree map test with empty tree`` () =
-    let tree = Tree.Empty
-    let expectedTree = Tree.Empty
-    let newTree = Tree.map (fun(x) -> x * x) tree
+    let tree = Leaf
+    let expectedTree = Leaf
+    let newTree = map (fun(x) -> x * x) tree
     newTree |> should equal expectedTree
