@@ -1,27 +1,27 @@
 ﻿module EvenNumbers.Tests
 
 open NUnit.Framework
-open EvenNumbers
+open Homework2.CountEvenNumbers
 open FsUnit
 open FsCheck
 
 /// Comparing the equivalence of the first and second functions.
 let firstSecondEquivalenceTest (list:list<int>) = 
-    CountEvenNumbers.firstCountEvenNumbers list = CountEvenNumbers.secondCountEvenNumbers list
+    firstCountEvenNumbers list = secondCountEvenNumbers list
 
 /// Comparing the equivalence of the second and third functions.
 let SecondThirdEquivalenceTest (list:list<int>) = 
-    CountEvenNumbers.secondCountEvenNumbers list = CountEvenNumbers.thirdCountEvenNumbers list
+    secondCountEvenNumbers list = thirdCountEvenNumbers list
 
 /// First count even numbers test.
 [<Test>]
 let ``First count even Numbers test`` () =
-    [1; 2; 3] |> CountEvenNumbers.secondCountEvenNumbers |> should equal 1
-    [2; 3; 4; 6] |> CountEvenNumbers.secondCountEvenNumbers |> should equal 3
-    [1; 3; 5] |> CountEvenNumbers.secondCountEvenNumbers |> should equal 0
-    [] |> CountEvenNumbers.secondCountEvenNumbers |> should equal 0
-    [1] |> CountEvenNumbers.secondCountEvenNumbers |> should equal 0
-    [10] |> CountEvenNumbers.secondCountEvenNumbers |> should equal 1
+    [1; 2; 3] |> secondCountEvenNumbers |> should equal 1
+    [2; 3; 4; 6] |> secondCountEvenNumbers |> should equal 3
+    [1; 3; 5] |> secondCountEvenNumbers |> should equal 0
+    [] |> secondCountEvenNumbers |> should equal 0
+    [1] |> secondCountEvenNumbers |> should equal 0
+    [10] |> secondCountEvenNumbers |> should equal 1
 
 /// Functional Equivalence Test.
 [<Test>]

@@ -1,4 +1,4 @@
-﻿namespace EvenNumbers
+﻿namespace Homework2
 
 /// Function module for counting the number of even numbers.
 module CountEvenNumbers =
