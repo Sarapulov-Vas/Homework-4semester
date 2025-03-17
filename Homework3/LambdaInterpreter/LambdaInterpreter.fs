@@ -6,6 +6,7 @@ module Interpreter =
         | Application of LambdaTerm * LambdaTerm
         | Abstraction of string * LambdaTerm
 
+    /// Function returning the list of free variables of a lambda term.
     let rec getFreeVariables expression =
         match expression with
             | Variable var -> [var]
@@ -14,6 +15,7 @@ module Interpreter =
             | Application (leftTerm, rightTerm) -> 
                 getFreeVariables leftTerm @ getFreeVariables rightTerm
 
+    /// Function generating new variable names.
     let rec getNewVar var index freeVars =
         let newVar = sprintf "%s%d" var index
         if List.contains newVar freeVars then 
@@ -21,6 +23,7 @@ module Interpreter =
         else
             newVar
 
+    /// The substitution function in the lambda term.
     let rec substitute expression var newTerm =
         match expression with
             | Variable v -> if v = var then newTerm else Variable v
@@ -38,6 +41,7 @@ module Interpreter =
                         let newVar = getNewVar v 0 (termFreeVars @ newTermFreeVars) 
                         Abstraction (newVar, substitute (substitute term v (Variable newVar)) var newTerm)
 
+    /// The function performing the reduction of the lambda term.
     let rec betaReduction expression =
         match expression with
             | Variable _ -> expression
