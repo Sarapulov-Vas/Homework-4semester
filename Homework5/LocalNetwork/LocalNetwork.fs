@@ -2,9 +2,12 @@
 
 open System
 
+/// Operating system interface.
 type IOperatingSystem =
+    /// A method that returns the probability of the computer being infected.
     abstract InfectionProbability : float
 
+/// Discriminated Union implementing IOperatingSystem.
 type OperatingSystem =
     | Windows
     | Linux
@@ -16,13 +19,18 @@ type OperatingSystem =
             | Linux -> 0.2
             | MacOS -> 0.4
 
+/// Class of computer.
 type Computer(id: int, os: IOperatingSystem, isInfected: bool) =
     let mutable isInfected = isInfected
     
+    /// Computer Id.
     member this.Id = id
+    /// Computer operating system.
     member this.OS = os
-    member this.IsInfected = isInfected
+    /// Whether the computer is infected.
+    member this.IsInfected with get() = isInfected
     
+    /// Method of attempting to infect a computer.
     member this.TryInfect(random: Random) =
         if not isInfected && random.NextDouble() < os.InfectionProbability then
             isInfected <- true
@@ -53,9 +61,13 @@ type Network(computers: list<Computer>, net: list<list<bool>>) =
             ]
         infectList |> List.iter (fun i -> i.TryInfect(random))
 
+    /// A method of performing the step of spreading a virus in a network.
     member this.SpreadVirus = spreadVirus
+
+    /// A method for printing the status of computers.
     member this.PrintState = printState
 
+    /// A method for running simulations of virus propagation in a network.
     member this.Model =
         printState()
         while not (isFinished()) do
