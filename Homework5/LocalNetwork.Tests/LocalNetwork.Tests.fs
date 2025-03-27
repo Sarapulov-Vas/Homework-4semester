@@ -28,11 +28,11 @@ let ``Virus spread test with probability 1`` () =
     ]
 
     let network = Network(computers, net)
-    network.SpreadInfection()
+    network.SpreadVirus()
     computers[0].IsInfected |> should be True
     computers[1].IsInfected |> should be True
     computers[2].IsInfected |> should be False
-    network.SpreadInfection()
+    network.SpreadVirus()
     computers[0].IsInfected |> should be True
     computers[1].IsInfected |> should be True
     computers[2].IsInfected |> should be True
@@ -50,7 +50,7 @@ let ``Virus spread test with probability 0`` () =
     ]
 
     let network = Network(computers, net)
-    network.SpreadInfection()
+    network.SpreadVirus()
     computers[0].IsInfected |> should be True
     computers[1].IsInfected |> should be False
 
