@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ParentheticalSequence", "ParentheticalSequence\ParentheticalSequence.fsproj", "{BA70903F-32EF-4CB0-AE25-082D9CD1560C}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ParentheticalSequence.Tests", "ParentheticalSequence.Tests\ParentheticalSequence.Tests.fsproj", "{A548BCB9-E408-4511-AF1E-FF79CF332704}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BA70903F-32EF-4CB0-AE25-082D9CD1560C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA70903F-32EF-4CB0-AE25-082D9CD1560C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA70903F-32EF-4CB0-AE25-082D9CD1560C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA70903F-32EF-4CB0-AE25-082D9CD1560C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A548BCB9-E408-4511-AF1E-FF79CF332704}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A548BCB9-E408-4511-AF1E-FF79CF332704}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A548BCB9-E408-4511-AF1E-FF79CF332704}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A548BCB9-E408-4511-AF1E-FF79CF332704}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
