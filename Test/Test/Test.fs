@@ -20,6 +20,7 @@ module Test =
 
     /// Infinite sequence of the form [1; -1; 1; -1; ...]
     let firstSeq = Seq.initInfinite (fun x -> if x % 2 = 0 then 1 else -1)
+
     /// Infinite sequence of the form [1; -2; 3; -4; ...]
     let secondSeq = 
         Seq.zip (Seq.initInfinite ((+) 1)) firstSeq |>Seq.map (fun (x, y) -> x * y)
