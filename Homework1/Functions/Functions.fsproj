@@ -5,8 +5,8 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
-  <ItemGroup><Compile Include="Functions.fs" />
-    
+  <ItemGroup>
+    <Compile Include="Functions.fs" />
   </ItemGroup>
 
 </Project>
