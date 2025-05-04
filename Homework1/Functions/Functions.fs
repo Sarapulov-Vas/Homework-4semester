@@ -2,6 +2,16 @@
 
 /// Module implementing functions for homework.
 module Functions =
+    /// Function that implements list reversal.
+    let rec listReverse list =
+        let rec reverse list reverseList =
+            if List.isEmpty list then
+                reverseList
+            else
+                reverse (List.tail list) (List.head list :: reverseList)
+
+        reverse list []
+
     /// Function calculating the n-th Fibonacci number.
     let rec fibonacci n =
         let rec fibo acc1 acc2 i =
