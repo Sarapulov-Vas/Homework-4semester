@@ -5,6 +5,13 @@ open Homework1
 open FsUnit
 open FsCheck
 
+/// Test of the function realizing a series of powers of two.
+[<Test>]
+let ``Degree range Tests`` () =
+    Functions.degreeRange 1 2 |> should equal (Some [2; 4])
+    Functions.degreeRange 3 5 |> should equal (Some [8; 16; 32; 64; 128])
+    Functions.degreeRange -1 2 |> should equal None
+
 let searchTest (list:list<int>, n:int) =
     Functions.numberSearch list n = List.tryFindIndex (fun x -> x = n) list
 
