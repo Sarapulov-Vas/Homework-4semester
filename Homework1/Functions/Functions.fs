@@ -9,7 +9,10 @@ module Functions =
                 Some acc1
             else
                 fibo acc2 (acc1 + acc2) (i - 1)
-         fibo 1 1 n
+        if n < 0 then
+            None
+        else
+            fibo 1 1 n
 
     /// Function calculating the factorial of n.
     let rec factorial n =
