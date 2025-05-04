@@ -6,6 +6,12 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ParseTree.Tests", "ParseTree.Tests\ParseTree.Tests.fsproj", "{5C2E6AF3-53B3-49E4-8896-E057B35CE7C4}"
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "ParseTree", "ParseTree\ParseTree.fsproj", "{79FB931F-0917-45FD-B90F-83FA73296885}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "TreeMap", "TreeMap\TreeMap.fsproj", "{F18AAFAD-963B-4E59-BB8D-BDBAB32C2B97}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "TreeMap.Tests", "TreeMap.Tests\TreeMap.Tests.fsproj", "{9CC53B19-0CDA-499A-89EE-39B6CCA9BE94}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "EvenNumbers", "EvenNumbers\EvenNumbers.fsproj", "{1A060DE6-F7DC-45DC-9335-11332AAB0126}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "EvenNumbers.Tests", "EvenNumbers.Tests\EvenNumbers.Tests.fsproj", "{82A9A1D7-464A-4661-9984-80D9F98630E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
