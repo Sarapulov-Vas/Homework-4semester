@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="treeMap.Tests.fs" />
+    <Compile Include="TreeMap.Tests.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 
@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\treeMap\treeMap.fsproj" />
+    <ProjectReference Include="..\TreeMap\TreeMap.fsproj" />
   </ItemGroup>
 
 </Project>
