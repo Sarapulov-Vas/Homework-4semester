@@ -13,4 +13,3 @@ module CountEvenNumbers =
     /// The function of counting the number of even numbers in the list.
     let thirdCountEvenNumbers list =
         list |> List.map (fun x -> if x % 2 = 0 then 1 else 0) |> List.sum
-    

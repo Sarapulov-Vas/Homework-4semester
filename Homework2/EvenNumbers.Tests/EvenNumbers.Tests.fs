@@ -10,7 +10,7 @@ let firstSecondEquivalenceTest (list:list<int>) =
     firstCountEvenNumbers list = secondCountEvenNumbers list
 
 /// Comparing the equivalence of the second and third functions.
-let SecondThirdEquivalenceTest (list:list<int>) = 
+let secondThirdEquivalenceTest (list:list<int>) = 
     secondCountEvenNumbers list = thirdCountEvenNumbers list
 
 /// First count even numbers test.
@@ -27,5 +27,5 @@ let ``First count even Numbers test`` () =
 [<Test>]
 let ``Functional equivalence test`` () =
     Check.QuickThrowOnFailure firstSecondEquivalenceTest
-    Check.QuickThrowOnFailure SecondThirdEquivalenceTest
+    Check.QuickThrowOnFailure secondThirdEquivalenceTest
 
