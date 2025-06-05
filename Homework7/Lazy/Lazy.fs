@@ -2,9 +2,11 @@
 
 open System.Threading
 
+/// lazy interface
 type ILazy<'a> =
     abstract member Get: unit -> 'a
 
+/// Single Thread Lazy
 type SingleThreadLazy<'a>(supplier: unit -> 'a) =
     let mutable result = None
     interface ILazy<'a> with
@@ -16,6 +18,7 @@ type SingleThreadLazy<'a>(supplier: unit -> 'a) =
                 result <- Some value
                 value
 
+/// Thread-safe implementation of lazy computation with locking
 type MultiThreadLazy<'a>(supplier: unit -> 'a) =
     let mutable result = None
     let lockObj = obj()
@@ -32,6 +35,7 @@ type MultiThreadLazy<'a>(supplier: unit -> 'a) =
                         result <- Some value
                         value)
 
+/// Threaded lock-free implementation of lazy computation
 type LockFreeLazy<'a>(supplier: unit -> 'a) =
     let mutable result = None
     interface ILazy<'a> with
