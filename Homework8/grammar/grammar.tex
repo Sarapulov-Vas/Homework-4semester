@@ -4,63 +4,52 @@
 
 \begin{document}
 \section{Грамматика}
-$Program ::= Definitions\ Term$ \\
-$Definitions ::= Definition\ Definitions \mid \varepsilon$ \\
-$Definition ::= \mathtt{let}\ Var = Term$ \\
+$Program ::= Definition\ Program\ \mid Term$ \\
+$Definition ::=\ 'let'\ Var\ '='\ Term$ \\
 $Term ::= Abstraction \mid Application \mid Atom$ \\
 $Abstraction ::= \backslash Params\ .\ Term$ \\
 $Params ::= Var\ Params \mid Var$ \\
 $Application ::= Atom\ AppTail$ \\
-$AppTail ::= Atom\ AppTail \mid \varepsilon$ \\
+$AppTail ::= Atom\ AppTail \mid\ Atom$ \\
 $Atom ::= Var \mid (Term)$ \\
 $Var ::= [a-zA-Z]+$
 
 \section{Примеры вывода}
 
-\subsection{Пример 1: \text{let K = \textbackslash x y.x}}
+\subsection{Пример 1: \text{\textbackslash x y.x}}
 
 $
-Program \rightarrow Definitions\ Term
-\rightarrow \\ Definition\ Definitions\ Term 
-\rightarrow \\ let\ Var\ =\ Term\ Definitions\ Term
-\rightarrow \\ let\ K\ =\ Term\ Definitions\ Term
-\rightarrow \\ let\ K\ =\ Abstraction\ Definitions\ Term
-\rightarrow \\ let\ K\ =\ \backslash Params.Term \ Definitions\ Term 
-\rightarrow \\ let\ K\ =\ \backslash Var\ Params.Term \ Definitions\ Term 
-\rightarrow \\ let\ K\ =\ \backslash x\ Params.Term \ Definitions\ Term
-\rightarrow \\ let\ K\ =\ \backslash x\ Var.Term \ Definitions\ Term
-\rightarrow \\ let\ K\ =\ \backslash x\ y.Term \ Definitions\ Term
-\rightarrow \\ let\ K\ =\ \backslash x\ y.Atom \ Definitions\ Term
-\rightarrow \\ let\ K\ =\ \backslash x\ y.Var \ Definitions\ Term
-\rightarrow \\ let\ K\ =\ \backslash x\ y.x \ Definitions\ Term
-\rightarrow \\ let\ K\ =\ \backslash x\ y.x \ \varepsilon\ Term
-\rightarrow \\ let\ K\ =\ \backslash x\ y.x \ \varepsilon
-\rightarrow \\ let\ K\ =\ \backslash x\ y.x
+Program \rightarrow Term
+\rightarrow Abstraction
+\rightarrow \\ \backslash Params.Term 
+\rightarrow \backslash Var\ Params.Term
+\rightarrow \\ \backslash x\ Params.Term
+\rightarrow \backslash x\ Var.Term
+\rightarrow \\ \backslash x\ y.Term
+\rightarrow \backslash x\ y.Atom
+\rightarrow \\ \backslash x\ y.Var
+\rightarrow \backslash x\ y.x
 $
 
 \subsection{Пример 2: \text{(\textbackslash x.x y) z}}
 $
-Program \rightarrow Definitions\ Term
-\rightarrow \varepsilon\ Term
-\rightarrow \\ Application
+Program \rightarrow  Term
+\rightarrow  Application
 \rightarrow Atom\ AppTail
-\rightarrow (Term)\ AppTail
-\rightarrow \\ (Application)\ AppTail
-\rightarrow (Atom\ AppTail)\ AppTail
-\rightarrow \\ (Atom\ AppTail)\ AppTail
-\rightarrow (Abstraction\ AppTail)\ AppTail
-\rightarrow \\ (\backslash Params . Term\ AppTail)\ AppTail
-\rightarrow (\backslash Var . Term\ AppTail)\ AppTail
-\rightarrow \\ (\backslash x . Term\ AppTail)\ AppTail
-\rightarrow (\backslash x . Application\ AppTail)\ AppTail
-\rightarrow \\ (\backslash x . Atom\ AppTail\ AppTail)\ AppTail
-\rightarrow \\ (\backslash x . Var\ AppTail\ AppTail)\ AppTail
-\rightarrow \\ (\backslash x . x\ AppTail\ AppTail)\ AppTail
-\rightarrow \\ (\backslash x . x\ Atom\ AppTail)\ AppTail
-\rightarrow \\ (\backslash x . x\ y\ AppTail)\ AppTail
-\rightarrow \\ (\backslash x . x\ y\ AppTail)\ AppTail
-\rightarrow \\ (\backslash x . x\ y\ \varepsilon)\ AppTail
-\rightarrow \\ (\backslash x . x\ y)\ Var
-\rightarrow \\ (\backslash x . x\ y)\ z
+\rightarrow \\ (Term)\ AppTail
+\rightarrow (Abstraction)\ AppTail
+\rightarrow \\ (\backslash Params . Term)\ AppTail
+\rightarrow (\backslash Var . Term)\ AppTail
+\rightarrow \\ (\backslash x . Term)\ AppTail
+\rightarrow (\backslash x . Abstraction)\ AppTail
+\rightarrow \\ (\backslash x . Atom\ AppTail)\ AppTail
+\rightarrow (\backslash x . Var\ AppTail)\ AppTail
+\rightarrow \\ (\backslash x . x\ AppTail)\ AppTail
+\rightarrow (\backslash x . x\ Atom)\ AppTail
+\rightarrow \\ (\backslash x . x\ Var)\ AppTail
+\rightarrow (\backslash x . x\ y)\ AppTail
+\rightarrow \\ (\backslash x . x\ y)\ Atom
+\rightarrow (\backslash x . x\ y)\ Var
+\rightarrow (\backslash x . x\ y)\ z
 $
 \end{document}
