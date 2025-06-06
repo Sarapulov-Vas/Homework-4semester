@@ -4,6 +4,7 @@ open System.Threading
 
 /// lazy interface
 type ILazy<'a> =
+    /// Method for obtaining the value of a function
     abstract member Get: unit -> 'a
 
 /// Single Thread Lazy

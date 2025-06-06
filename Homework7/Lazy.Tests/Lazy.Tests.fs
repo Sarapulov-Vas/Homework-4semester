@@ -33,7 +33,7 @@ let ``Test MultiThreadLazy`` () =
     counter |> should equal 1
 
 [<Test>]
-let ``LockFreeLazy should return consistent value despite multiple computations`` () =
+let ``Test LockFreeLazy`` () =
     let mutable counter = 0
     let lazyValue = (LockFreeLazy(fun () -> 
         Interlocked.Increment(&counter) |> ignore
@@ -49,7 +49,7 @@ let ``LockFreeLazy should return consistent value despite multiple computations`
     counter |> should be (greaterThanOrEqualTo 1)
 
 [<Test>]
-let ``All implementations should handle null values`` () =
+let ``Null Test`` () =
     let singleLazy = SingleThreadLazy(fun () -> null) :> ILazy<string>
     let multiLazy = MultiThreadLazy(fun () -> null) :> ILazy<string>
     let lockFreeLazy = LockFreeLazy(fun () -> null) :> ILazy<string>
