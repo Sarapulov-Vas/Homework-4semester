@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Lazy", "Lazy\Lazy.fsproj", "{61DEAC59-4810-4D24-B03B-EDB13244698D}"
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Lazy.Tests", "Lazy.Tests\Lazy.Tests.fsproj", "{1849F02E-F353-4F99-AAA3-980721214DE2}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Mini-crawler", "Mini-crawler\Mini-crawler.fsproj", "{F2315CAF-FBAC-4774-9C32-9B4DAF123355}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Mini-crawler.Tests", "Mini-crawler.Tests\Mini-crawler.Tests.fsproj", "{34F63C4C-1C61-48CB-96D7-62AB42241902}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +27,13 @@ Global
 		{1849F02E-F353-4F99-AAA3-980721214DE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1849F02E-F353-4F99-AAA3-980721214DE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1849F02E-F353-4F99-AAA3-980721214DE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2315CAF-FBAC-4774-9C32-9B4DAF123355}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2315CAF-FBAC-4774-9C32-9B4DAF123355}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2315CAF-FBAC-4774-9C32-9B4DAF123355}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2315CAF-FBAC-4774-9C32-9B4DAF123355}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34F63C4C-1C61-48CB-96D7-62AB42241902}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34F63C4C-1C61-48CB-96D7-62AB42241902}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34F63C4C-1C61-48CB-96D7-62AB42241902}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34F63C4C-1C61-48CB-96D7-62AB42241902}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
