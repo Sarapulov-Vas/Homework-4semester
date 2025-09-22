@@ -1,0 +1,55 @@
+\documentclass{article}
+\usepackage[russian]{babel}
+\usepackage{amsmath}
+
+\begin{document}
+\section{Грамматика}
+$Program ::= Definition\ Program\ \mid Term$ \\
+$Definition ::=\ 'let'\ Var\ '='\ Term$ \\
+$Term ::= Abstraction \mid Application \mid Atom$ \\
+$Abstraction ::= \backslash Params\ .\ Term$ \\
+$Params ::= Var\ Params \mid Var$ \\
+$Application ::= Atom\ AppTail$ \\
+$AppTail ::= Atom\ AppTail \mid\ Atom$ \\
+$Atom ::= Var \mid (Term)$ \\
+$Var ::= [a-zA-Z]+$
+
+\section{Примеры вывода}
+
+\subsection{Пример 1: \text{\textbackslash x y.x}}
+
+$
+Program \rightarrow Term
+\rightarrow Abstraction
+\rightarrow \\ \backslash Params.Term 
+\rightarrow \backslash Var\ Params.Term
+\rightarrow \\ \backslash x\ Params.Term
+\rightarrow \backslash x\ Var.Term
+\rightarrow \\ \backslash x\ y.Term
+\rightarrow \backslash x\ y.Atom
+\rightarrow \\ \backslash x\ y.Var
+\rightarrow \backslash x\ y.x
+$
+
+\subsection{Пример 2: \text{(\textbackslash x.x y) z}}
+$
+Program \rightarrow  Term
+\rightarrow  Application
+\rightarrow Atom\ AppTail
+\rightarrow \\ (Term)\ AppTail
+\rightarrow (Abstraction)\ AppTail
+\rightarrow \\ (\backslash Params . Term)\ AppTail
+\rightarrow (\backslash Var . Term)\ AppTail
+\rightarrow \\ (\backslash x . Term)\ AppTail
+\rightarrow (\backslash x . Abstraction)\ AppTail
+\rightarrow \\ (\backslash x . Atom\ AppTail)\ AppTail
+\rightarrow (\backslash x . Var\ AppTail)\ AppTail
+\rightarrow \\ (\backslash x . x\ AppTail)\ AppTail
+\rightarrow (\backslash x . x\ Atom)\ AppTail
+\rightarrow \\ (\backslash x . x\ Var)\ AppTail
+\rightarrow (\backslash x . x\ y)\ AppTail
+\rightarrow \\ (\backslash x . x\ y)\ Atom
+\rightarrow (\backslash x . x\ y)\ Var
+\rightarrow (\backslash x . x\ y)\ z
+$
+\end{document}
