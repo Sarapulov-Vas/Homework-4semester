@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "StringCalculations", "StringCalculations\StringCalculations.fsproj", "{FF453A3F-5C49-4C3D-8D36-1AB402931026}"
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "StringCalculations.Tests", "StringCalculations.Tests\StringCalculations.Tests.fsproj", "{E1D550C9-D815-426A-86F3-896208438C66}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "RoundingWorkflow", "RoundingWorkflow\RoundingWorkflow.fsproj", "{D78BEFDD-52D5-49EF-A36A-7049E2252DC6}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "RoundingWorkflow.Tests", "RoundingWorkflow.Tests\RoundingWorkflow.Tests.fsproj", "{6583C318-4DAA-431C-85AB-8673122D1D05}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +27,13 @@ Global
 		{E1D550C9-D815-426A-86F3-896208438C66}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E1D550C9-D815-426A-86F3-896208438C66}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E1D550C9-D815-426A-86F3-896208438C66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D78BEFDD-52D5-49EF-A36A-7049E2252DC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D78BEFDD-52D5-49EF-A36A-7049E2252DC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D78BEFDD-52D5-49EF-A36A-7049E2252DC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D78BEFDD-52D5-49EF-A36A-7049E2252DC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6583C318-4DAA-431C-85AB-8673122D1D05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6583C318-4DAA-431C-85AB-8673122D1D05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6583C318-4DAA-431C-85AB-8673122D1D05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6583C318-4DAA-431C-85AB-8673122D1D05}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
